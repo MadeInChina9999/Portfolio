@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Cheng Pascal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="ide-container">
+        <header>
+            <div class="logo">
+                <a href="index.html"><img src="icons/logo.svg" class="logo-item" alt="logo" width="32" height="32" /></a>
+                <span class="name">Cheng-Pascal</span>
+            </div>
+            <nav>
+                <a href="index.html" class="active home-link">_hello-world</a>
+                <a href="about-me.html" class="locked">_a-propos</a>
+                <a href="projects.html" class="locked">_projets</a>
+                <a href="contact-me.html" class="locked contact-link">_contact</a>
+            </nav>
+        </header>
+
+        <div class="main-body">
+            <main>
+                <div class="hero-container">
+                    <div class="hero-text">
+                        <p>Bonjour, je suis </p>
+                        <h1>Cheng Pascal</h1>
+                        <h2 class="role">Développeur Front-end</h2>
+                        
+                        <div class="comment-block">
+                            <p class="comment">// Complétez le jeu pour continuer</p>
+                            <p class="comment">// vous pouvez aussi passer</p>
+                            <p class="code-line">
+                                <span class="const">const</span> <span class="const-name">githubLink</span> = 
+                                <span class="str"><a href="https://github.com/MadeInChina9999" target="_blank">"https://github.com/MadeInChina9999"</a></span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="game-wrapper">
+                        <div class="console-body">
+                            <div class="screw top-left"></div>
+                            <div class="screw top-right"></div>
+                            <div class="screw bottom-left"></div>
+                            <div class="screw bottom-right"></div>
+
+                            <div class="screen-container">                                
+                                <canvas id="snake-game" width="240" height="400"></canvas>
+                                <div id="food-spawn-overlay" class="food-overlay"></div>
+                                <button id="play-btn" class="start-btn">Commencer !</button>
+                                <div id="game-over-msg" style="display:none;">Dommage !</div>
+                                <div id="win-msg" style="display:none;">Bravo !</div>
+                                
+                                <div id="unlock-notification" class="unlock-overlay" style="display: none;">
+                                    <span class="unlock-icon">🔓</span>
+                                    <span class="unlock-title">SYSTÈME DÉVERROUILLÉ</span>
+                                    <span class="unlock-sub">Accès autorisé à toutes les sections</span>
+                                </div>
+
+                                <div id="locked-notification" class="unlock-overlay" style="display: none;">
+                                    <span class="unlock-icon" style="text-shadow: 0 0 20px rgba(254, 165, 95, 0.6);">🔒</span>
+                                    <span class="unlock-title" style="color: var(--accent-orange);">ACCÈS REFUSÉ</span>
+                                    <span class="unlock-sub">1.Atteindre 5 points <br>sur SNAKE<br>OU<br>2.'PASSER'</span>
+                                    <button id="close-locked-btn" class="close-popup-btn">Fermer</button>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-container">
+                                <div class="dashboard-section">
+                                    <div class="comment-text">// Utilisez les flèches</div>
+                                    <div class="comment-text">// Pour jouer</div>
+                                    
+                                    <div class="keys-grid">
+                                        <div class="key-placeholder"></div>
+                                        <div id="btn-up" class="key-btn"><img src="icons/arrow-up-snake.svg" alt="^"></div>
+                                        <div class="key-placeholder"></div>
+                                        <div id="btn-left" class="key-btn"><img src="icons/arrow-left-snake.svg" alt="<"></div>
+                                        <div id="btn-down" class="key-btn"><img src="icons/arrow-down-snake.svg" alt="v"></div>
+                                        <div id="btn-right" class="key-btn"><img src="icons/arrow-right-snake.svg" alt=">"></div>
+                                    </div>
+                                </div>
+
+                                <div class="dashboard-section">
+                                    <div class="comment-text">// Points restant</div>
+                                    <div class="food-list">
+                                        <div class="food-dot"></div>
+                                        <div class="food-dot"></div>
+                                        <div class="food-dot"></div>
+                                        <div class="food-dot"></div>
+                                        <div class="food-dot"></div>
+                                    </div>
+                                </div>
+
+                                <div class="dashboard-footer">
+                                    <button id="skip-btn" class="skip-btn">Passer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer>
+            <div class="socials">
+                <span style="display:flex; align-items:center; margin-right: 15px; color:var(--text-primary)">Retrouvez moi sur:</span>
+                <a href="https://www.linkedin.com/in/pascal-cheng-developpeur/" class="social-item" target="_blank"><img src="icons/in.svg" alt="In"></a>
+                <!-- <a href="https://twitter.com" class="social-item" target="_blank"><img src="icons/x.svg" alt="X"></a> -->
+            </div>
+            <div class="github-user">
+                @MadeInChina9999 <a href="https://github.com/MadeInChina9999" target="_blank" style="margin-left:10px;"><img src="icons/GitHub.svg" alt="GH"></a>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

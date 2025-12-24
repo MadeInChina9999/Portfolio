@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="ide-container">
+        <header>
+            <div class="logo">
+                <a href="index.html"><img src="icons/logo.svg" class="logo-item" alt="logo" width="32" height="32" /></a>
+                <span class="name">Cheng-Pascal</span>
+            </div>
+            <nav>
+                <a href="index.html" class="home-link">_hello-world</a>
+                <a href="about-me.html">_a-propos</a>
+                <a href="projects.html" class="active">_projets</a>
+                <a href="contact-me.html" class="contact-link">_contact</a>
+            </nav>
+        </header>
+        
+        <div class="main-body">
+            <aside>
+                <div class="sidebar-title"><img src="icons/arrow-down.svg" alt=""> contacts</div>
+                <div class="sidebar-content">
+                    <div class="folder-item"><img src="icons/icon-message.svg" alt=""> chengpascal@live.fr</div>
+                    <div class="folder-item"><img src="icons/icon-phone.svg" alt=""> +33 7 44 44 49 99</div>
+                    <div class="sidebar-title" style="border-top:1px solid var(--border-line); margin-top:10px; margin-bottom: 10px; padding-left:0;"><img src="icons/arrow-down.svg" alt=""> Également présent sur :</div>
+                    <!-- <div class="folder-item"><img src="icons/icon-link.svg" alt=""><a href=""> YouTube</a></div> -->
+                    <div class="folder-item"><img src="icons/icon-link.svg" alt=""><a href="https://www.instagram.com/made_in_china_9999/"> Instagram</a></div>
+                </div>
+            </aside>
+            
+            <main>
+                <div class="contact-wrapper">
+                    <div class="contact-form">
+                        <div id="form-container">
+                            <div class="form-group">
+                                <label class="form-label">_nom:</label>
+                                <input type="text" id="name-input" placeholder="Jean Dupont">
+                                <div class="error-msg" id="error-name">Veuillez entrer votre nom</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">_email:</label>
+                                <input type="email" id="email-input" placeholder="jean@exemple.fr">
+                                <div class="error-msg" id="error-email">Entrer une adresse e-mail valide</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">_message:</label>
+                                <textarea id="message-input" rows="6" placeholder="Votre message..."></textarea>
+                                <div class="error-msg" id="error-message">Veuillez écrire un message</div>
+                            </div>
+                            
+                            <button id="submit-btn" class="submit-btn">Envoyer le messsage</button>
+                        </div>
+
+                        <div id="success-container" class="thank-you-container">
+                            <div class="thank-you-title">Merci! 🤘</div>
+                            <p class="thank-you-text">
+                                Votre message a bien été envoyé.<br>
+                                Je vous répondrai dans les plus brefs délais.
+                            </p>
+                            <button id="reset-btn" class="new-msg-btn">Envoyer un nouveau message</button>
+                        </div>
+                    </div>
+
+                    <div class="contact-code">
+                        <div class="code-snippet">
+                            <p>
+                                <span class="kwd">const</span> <span class="const-name">bouton</span> <span class="kwd">=</span> <span class="const-name">document</span>.<span class="const-name">querySelector</span>(<span class="str">'#envoyer'</span>);
+                            </p>
+                            <br>
+                            <p>
+                                <span class="kwd">const</span> <span class="const-name">message</span> <span class="kwd">=</span> <span class="punct">{</span>
+                            </p>
+                            <p>
+                                &nbsp;&nbsp;<span class="const-name">nom</span>: <span class="str">"<span id="code-name"></span>"</span>,
+                            </p>
+                            <p>
+                                &nbsp;&nbsp;<span class="const-name">email</span>: <span class="str">"<span id="code-email"></span>"</span>,
+                            </p>
+                            <p>
+                                &nbsp;&nbsp;<span class="const-name">message</span>: <span class="str">"<span id="code-message"></span>"</span>,
+                            </p>
+                            <p>
+                                &nbsp;&nbsp;<span class="const-name">date</span>: <span class="str">"<span id="code-date"></span>"</span>
+                            </p>
+                            <p><span class="punct">}</span></p>
+                            <br>
+                            <p>
+                                <span class="const-name">bouton</span>.<span class="const-name">addEventListener</span>(<span class="str">'click'</span>, () <span class="kwd">=></span> <span class="punct">{</span>
+                            </p>
+                            <p>
+                                &nbsp;&nbsp;<span class="const-name">formulaire</span>.<span class="const-name">envoyer</span>(<span class="const-name">message</span>);
+                            </p>
+                            <p><span class="punct">})</span></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer>
+            <div class="socials">
+                <span style="display:flex; align-items:center; margin-right: 15px; color:var(--text-primary)">Retrouvez moi sur:</span>
+                <a href="https://www.linkedin.com/in/pascal-cheng-developpeur/" class="social-item" target="_blank"><img src="icons/in.svg" alt="In"></a>
+                <!-- <a href="https://twitter.com" class="social-item" target="_blank"><img src="icons/x.svg" alt="X"></a> -->
+            </div>
+            <div class="github-user">
+                @MadeInChina9999 <a href="https://github.com/MadeInChina9999" target="_blank" style="margin-left:10px;"><img src="icons/GitHub.svg" alt="GH"></a>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
