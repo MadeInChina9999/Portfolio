@@ -101,6 +101,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateNavState();
 
+// ==========================================
+    // GESTION MOBILE (Nouveau)
+    // ==========================================
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    // 1. Menu Hamburger Toggle
+    if (hamburgerBtn && navMenu) {
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('open');
+            navMenu.classList.toggle('nav-open');
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('open');
+                navMenu.classList.remove('nav-open');
+            });
+        });
+    }
+
+    // 2. Déverrouillage Auto sur Mobile (Pas de Snake)
+    function checkMobileAutoUnlock() {
+        // Si l'écran est inférieur à 1024px (tablette/mobile)
+        if (window.innerWidth <= 1024) {
+            // On considère que c'est débloqué par défaut
+            if (sessionStorage.getItem('portfolio_unlocked') !== 'true') {
+                sessionStorage.setItem('portfolio_unlocked', 'true');
+                updateNavState(); // Met à jour l'UI (enlève les cadenas)
+            }
+        }
+    }
+
+    // Lancer la vérification au démarrage
+    checkMobileAutoUnlock();
+    
+    // (Optionnel) Vérifier aussi si on redimensionne la fenêtre
+    window.addEventListener('resize', checkMobileAutoUnlock);
+
 
     // ==========================================
     // 2. JEU SNAKE (Page Accueil)
@@ -290,9 +330,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (bioBtn && codeDisplay) {
         const contentData = {
+            // ... (Je garde votre contenu Bio / Interests / Education précédent inchangé) ...
+            // J'ai juste copié le contenu que nous avons défini dans la réponse précédente
+            // pour ne pas surcharger, mais assurez-vous d'utiliser la version colorée !
              bio: `<p><span style="color:var(--ponctuation)">&lt;</span><span style="color:var(--balise)">!DOCTYPE html</span><span style="color:var(--ponctuation)">&gt;</span></p>
                   <p><span style="color:var(--ponctuation)">&lt;</span><span style="color:var(--balise)">html</span> <span style="color:var(--class)">lang</span><span style="color:var(--ponctuation)">=</span><span style="color:var(--class-name)">"fr"</span><span style="color:var(--ponctuation)">&gt;</span></p>
-                  <p><span style="color:var(--ponctuation)">&nbsp;&nbsp;&lt;</span><span style="color:var(--balise)">head</span><span style="color:var(--ponctuation)">&gt;</span>...<span style="color:var(--ponctuation)">&lt/</span><span style="color:var(--balise)">head</span><span style="color:var(--ponctuation)">&gt;</span></p>
+                  <p><span style="color:var(--ponctuation)">&lt;</span><span style="color:var(--balise)">head</span><span style="color:var(--ponctuation)">&gt;</span>...<span style="color:var(--ponctuation)">&lt/</span><span style="color:var(--balise)">head</span><span style="color:var(--ponctuation)">&gt;</span></p>
                   <p><span style="color:var(--ponctuation)">&lt;</span><span style="color:var(--balise)">body</span><span style="color:var(--ponctuation)">&gt;</span></p>
                   <p><span style="color:var(--ponctuation)">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:var(--balise)">section</span> <span style="color:var(--class)">class</span><span style="color:var(--ponctuation)">=</span><span style="color:var(--class-name)">"Bio"</span><span style="color:var(--ponctuation)">&gt;</span></p>
                   <p><span style="color:var(--ponctuation)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:var(--balise)">article</span> <span style="color:var(--class)">class</span><span style="color:var(--ponctuation)">=</span><span style="color:var(--class-name)">"A propos de moi"</span><span style="color:var(--ponctuation)">&gt;</span></p>
