@@ -47,10 +47,6 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 14px;
-    
-    /* Transition de page
-    transition: opacity 0.3s ease-in-out;
-    opacity: 1; */
 }
 
 /* =========================================
@@ -149,7 +145,7 @@ nav a.locked {
 .main-body {
     display: flex;
     flex: 1;
-    overflow: hidden; /* Important pour le scroll interne */
+    overflow: hidden;
 }
 
 /* SIDEBAR */
@@ -197,7 +193,7 @@ aside {
 /* MAIN VIEW */
 main {
     flex: 1;
-    overflow-y: auto; /* Scroll vertical uniquement ici */
+    overflow-y: auto; 
     position: relative;
     scrollbar-width: thin;
     scrollbar-color: var(--text-primary) var(--bg-dark);
@@ -408,7 +404,7 @@ footer {
 /* Alignement du bouton Skip à droite */
 .dashboard-footer {
     display: flex;
-    justify-content: flex-end; /* C'est cette ligne qui pousse le bouton à droite */
+    justify-content: flex-end;
 }
 
 /* Bouton Skip */
@@ -441,8 +437,6 @@ footer {
     border-radius: 15px;
     overflow: hidden;
     border: 1px solid var(--border-line);
-    
-    /* CRUCIAL : Flexbox pour l'alignement vertical */
     display: flex;
     flex-direction: column;
     height: 100%; 
@@ -479,7 +473,7 @@ footer {
 .img-placeholder img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Coupe l'image intelligemment pour remplir sans déformer */
+    object-fit: cover;
 }
 
 .tech-icon-corner {
@@ -496,7 +490,6 @@ footer {
 .card-body {
     background-color: #011221;
     padding: 24px;
-    /* CRUCIAL : Remplit l'espace vide pour aligner les boutons en bas */
     flex: 1; 
     display: flex;
     flex-direction: column;
