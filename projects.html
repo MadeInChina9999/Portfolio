@@ -7,6 +7,8 @@
 </head>
 <body>
     <div class="ide-container">
+        <div class="bg-gradient-green"></div>
+        <div class="bg-gradient-blue"></div>
         <header>
             <div class="logo">
                 <a href="index.html"><img src="icons/logo.svg" class="logo-item" alt="logo" width="32" height="32" /></a>
@@ -18,19 +20,37 @@
                 <a href="projects.html" class="active">_projets</a>
                 <a href="contact-me.html" class="contact-link">_contact</a>
             </nav>
+
+            <div class="hamburger" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </header>
         
         <div class="main-body">
             <aside>
                 <div class="sidebar-title"><img src="icons/arrow-down.svg" alt="v"> projects</div>
                 <div class="sidebar-content">
-                    <!-- <div class="filter-item"><div class="checkbox checked">✓</div> <span class="filter-icon"><img src="icons/icon-react.svg" alt=""></span> React</div> -->
-                    <div class="filter-item"><div class="checkbox checked">✓</div> <span class="filter-icon"><img src="icons/icon-html.svg" alt=""></span> HTML</div>
-                    <div class="filter-item"><div class="checkbox checked">✓</div> <span class="filter-icon"><img src="icons/icon-css.svg" alt=""></span> CSS</div>
-                    <div class="filter-item"><div class="checkbox checked">✓</div> <span class="filter-icon"><img src="icons/icon-js.svg" alt=""></span> JS</div>
-                    <!-- <div class="filter-item"><div class="checkbox checked">✓</div> <span class="filter-icon"><img src="icons/icon-vue.svg" alt=""></span> Vue</div> -->
-                    <div class="filter-item"><div class="checkbox checked">✓</div> <span class="filter-icon"><img src="icons/icon-illustrator.svg" alt=""></span> Illustrator</div>
-                    <div class="filter-item"><div class="checkbox checked">✓</div> <span class="filter-icon"><img src="icons/icon-figma.svg" alt=""></span> Figma</div>
+                    <div class="filter-item">
+                        <div class="checkbox">✓</div> <span class="filter-icon"><img src="icons/icon-html.svg" alt=""></span> HTML
+                    </div>
+                    
+                    <div class="filter-item">
+                        <div class="checkbox">✓</div> <span class="filter-icon"><img src="icons/icon-css.svg" alt=""></span> CSS
+                    </div>
+                    
+                    <div class="filter-item">
+                        <div class="checkbox">✓</div> <span class="filter-icon"><img src="icons/icon-js.svg" alt=""></span> JS
+                    </div>
+                    
+                    <div class="filter-item">
+                        <div class="checkbox">✓</div> <span class="filter-icon"><img src="icons/icon-illustrator.svg" alt=""></span> Illustrator
+                    </div>
+                    
+                    <div class="filter-item">
+                        <div class="checkbox">✓</div> <span class="filter-icon"><img src="icons/icon-figma.svg" alt=""></span> Figma
+                    </div>
                 </div>
             </aside>
             
@@ -78,7 +98,7 @@
                     <div class="project-card" data-tech="HTML CSS JS">
                         <div class="card-header">
                             <span class="project-number">Project </span>
-                            <span class="project-name">// Partiel S1</span>
+                            <span class="project-name">// Partiel MDS</span>
                         </div>
                         <div class="card-image-container">
                                 <div class="img-placeholder">
@@ -136,6 +156,25 @@
                         </div>
                     </div>
 
+                    <div class="project-card" data-tech="Illustrator">
+                        <div class="card-header">
+                            <span class="project-number">Project </span>
+                            <span class="project-name">// Widget Météo</span>
+                        </div>
+                        <div class="card-image-container">
+                            <div class="img-placeholder">
+                                <img src="images/Widget.png" alt="Widget Météo" width="40" style="opacity:0.9">
+                            </div>
+                            <div class="tech-icon-corner">
+                                <img src="icons/icon-illustrator.svg" alt="Illustrator" width="20" title="Illustrator">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-desc">Widget Météo dans un thème minimalist</p>
+                            <a href="images/Widget.png" class="view-btn" target="_blank">Voir le projet</a>
+                        </div>
+                    </div>
+
                     <div class="project-card" data-tech="Figma">
                         <div class="card-header">
                             <span class="project-number">Project </span>
@@ -155,7 +194,10 @@
                             <a href="https://www.figma.com/design/7YAN9b9ZnGNsOeN2S1kIqk/Sans-titre?node-id=0-1&t=cBE3Y8zRkjXrV68E-1" class="view-btn" target="_blank">Voir le projet</a>
                         </div>
                     </div>
-
+                </div>
+                <div id="no-results-message" class="no-results-container" style="display: none;">
+                    <div class="no-results-icon">X</div>
+                    <p class="no-results-text">Aucun projet n'est réalisé pour le moment...</p>
                 </div>
             </main>
         </div>
@@ -173,8 +215,4 @@
     </div>
     <script src="script.js"></script>
 </body>
-
 </html>
-
-
-
