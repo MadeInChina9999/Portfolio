@@ -53,6 +53,12 @@ body {
     font-size: 18px; 
 }
 
+/* Ajoutez ce bloc quelque part dans votre CSS (vers les styles globaux) */
+header, .main-body, footer {
+    position: relative;
+    z-index: 2; /* Passe DEVANT les halos (qui sont à 0) */
+}
+
 /* =========================================
    2. MAIN LAYOUT (IDE STYLE)
    ========================================= */
@@ -63,6 +69,44 @@ body {
     display: flex;
     flex-direction: column;
     border: 1px solid var(--border-line);
+    position: relative; 
+    overflow: hidden;   /* Coupe les halos qui dépassent */
+    z-index: 1;
+}
+
+/* Styles de base des halos (visibles sur desktop et mobile) */
+.bg-gradient-green, .bg-gradient-blue {
+    position: absolute;
+    filter: blur(120px); /* Flou très important pour l'effet "halo" */
+    z-index: 0; /* Derrière le contenu */
+    pointer-events: none; /* Ne gêne pas les clics */
+    opacity: 0.7; /* Subtil */
+}
+
+.bg-gradient-green {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(67, 217, 173, 0.4) 0%, rgba(67, 217, 173, 0.01) 70%);
+    top: 5%;
+    left: 55%;
+    position: absolute;
+    filter: blur(120px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.bg-gradient-blue {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(77, 91, 206, 0.4) 0%, rgba(77, 91, 206, 0.01) 70%);
+    bottom: 5%;
+    right: 45%;
+    position: absolute;
+    filter: blur(120px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.7;
 }
 
 /* --- HEADER --- */
@@ -549,6 +593,36 @@ footer {
     box-shadow: 0 0 10px rgba(96, 123, 150, 0.4);
 }
 
+/* --- Message "Aucun résultat" --- */
+.no-results-container {
+    /* Sera mis en display: flex par le JS */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Prend toute la hauteur disponible */
+    color: var(--text-primary);
+    text-align: center;
+    padding: 40px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.no-results-icon {
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--accent-orange); /* Couleur d'alerte */
+    border: 3px solid var(--accent-orange);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.no-results-text {
+    font-size: 20px;
+}
 
 /* Sidebar Filtres */
 .filter-item {
@@ -723,4 +797,228 @@ input.input-error, textarea.input-error { border-color: #E99287; }
 .cv-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* =========================================
+   7. RESPONSIVE DESIGN (MOBILE)
+   ========================================= */
+
+/* Styles par défaut (Desktop) : on cache les éléments mobile */
+.hamburger { display: none; }
+.mobile-bg-gradient-green { display: none; }
+.mobile-bg-gradient-blue { display: none; }
+.mobile-show { display: none; }
+
+.mobile-about-menu { display: none; }
+
+@media (max-width: 1024px) {
+    /* --- AJUSTEMENTS GÉNÉRAUX --- */
+    body { font-size: 14px; }
+    
+    .ide-container {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    /* --- HEADER & NAV --- */
+    header {
+        justify-content: space-between;
+        padding-right: 20px;
+        z-index: 100;
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 101;
+        margin-top: 20px;
+    }
+    .hamburger span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--text-primary);
+        border-radius: 3px;
+        transition: 0.3s;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+    /* Menu Navigation */
+    nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px - 54px);
+        background-color: var(--bg-main);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        z-index: 99;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        border-bottom: 1px solid var(--border-line);
+    }
+
+    nav.nav-open { transform: translateX(0); }
+
+    nav a {
+        width: 100%;
+        padding: 20px;
+        border-right: none;
+        border-bottom: 1px solid var(--border-line);
+        font-size: 18px;
+    }
+    
+    .contact-link { margin-left: 0; border-left: none; }
+
+    /* --- CONTENU HOME --- */
+    .main-body { flex-direction: column; }
+    aside { display: none; }
+
+    .hero-container {
+        flex-direction: column;
+        padding: 30px;
+        justify-content: center;
+        text-align: left;
+    }
+
+    .hero-text { max-width: 100%; z-index: 10; }
+    .hero-text h1 { font-size: 42px; }
+    .hero-text .role { font-size: 20px; color: var(--accent-blue); }
+
+    .game-wrapper { display: none; }
+    .mobile-hide { display: none; }
+    .mobile-show { display: block; color: var(--text-primary); margin-bottom: 10px; }
+
+    /* --- PAGE ABOUT ME (Mobile) --- */
+    .mobile-about-menu {
+        display: block;
+        width: 100%;
+        background-color: var(--bg-main);
+        border-bottom: 1px solid var(--border-line);
+    }
+
+    .mobile-section-title {
+        background-color: var(--border-line);
+        color: var(--text-white);
+        padding: 10px 20px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .mobile-file-list {
+        padding: 5px 0;
+        background-color: var(--bg-main);
+    }
+
+    .mobile-file-item {
+        padding: 12px 25px;
+        color: var(--text-primary);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        transition: 0.2s;
+    }
+
+    .mobile-file-item:hover { color: var(--text-white); }
+
+    .mobile-file-item.active {
+        color: var(--text-white);
+        background-color: rgba(67, 217, 173, 0.1);
+        border-left: 3px solid var(--accent-teal);
+    }
+
+    .file-icon { opacity: 0.8; width: 18px; height: 18px; }
+    .tree-line { display: inline-block; width: 1px; height: 100%; border-left: 1px solid var(--border-line); margin-right: 5px; }
+
+    /* --- ZONE DE CODE CORRIGÉE --- */
+    .about-layout {
+        padding: 20px 10px;
+        overflow-x: auto;
+        display: flex; /* Flexbox pour aligner les colonnes */
+        align-items: flex-start;
+        /* Pas de hauteur fixe pour laisser le contenu pousser */
+        flex-direction: row; 
+    }
+    
+    /* Colonne des numéros */
+    .line-numbers {
+        display: block;
+        min-width: 30px; 
+        padding-right: 10px;
+        text-align: right;
+        opacity: 0.5;
+        border-right: 1px solid var(--border-line);
+        
+        /* ALIGNEMENT STRICT */
+        font-size: 15px; 
+        line-height: 1.6; 
+        padding-top: 0; /* Important : doit être 0 comme le contenu */
+        margin-top: 0;
+    }
+    
+    /* Colonne du texte */
+    .code-content {
+        padding-left: 10px;
+        flex: 1;
+        
+        /* ALIGNEMENT STRICT */
+        font-size: 15px; 
+        line-height: 1.6;
+        padding-top: 0; /* Important : Reset du padding */
+        margin-top: 0;
+        
+        white-space: pre-wrap; 
+        word-break: break-word; 
+    }
+
+    /* --- BOUTON CV (Déplacé dans le flux) --- */
+    .cv-download-btn {
+        /* On annule la position absolute du desktop */
+        position: static; 
+        transform: none;
+        opacity: 1; /* Visible par défaut si display:flex via JS */
+        
+        /* Mise en page pour le placer en bas */
+        margin-top: 30px; 
+        margin-left: 45px; /* Pour s'aligner visuellement avec le texte (30px numéros + 15px marge) */
+        margin-bottom: 40px;
+        
+        width: fit-content;
+        display: none; /* Géré par le JS (flex quand affiché) */
+    }
+    
+    /* Animation d'apparition ajustée pour mobile */
+    .cv-visible {
+        display: flex !important;
+        animation: fadeIn 0.5s ease forwards;
+    }
+
+    /* Gradients Mobile */
+    .mobile-bg-gradient-green {
+        display: block; position: absolute; width: 250px; height: 250px;
+        background: radial-gradient(circle, rgba(67, 217, 173, 0.4) 0%, rgba(67, 217, 173, 0.01) 70%);
+        top: 10%; left: -50px; filter: blur(60px); z-index: 1; pointer-events: none; opacity: 0.6;
+    }
+    
+    .mobile-bg-gradient-blue {
+        display: block; position: absolute; width: 250px; height: 250px;
+        background: radial-gradient(circle, rgba(77, 91, 206, 0.4) 0%, rgba(77, 91, 206, 0.01) 70%);
+        bottom: 10%; right: -50px; filter: blur(60px); z-index: 1; pointer-events: none; opacity: 0.6;
+    }
+
+    .footer-label { display: none !important; }
 }
