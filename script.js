@@ -326,38 +326,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. PAGE A PROPOS (About Me)
     // ==========================================
     const bioBtn = document.getElementById('folder-bio');
-    const codeDisplay = document.querySelector('.code-content');
-    
-    if (bioBtn && codeDisplay) {
-        const contentData = {
-            // ... (Je garde votre contenu Bio / Interests / Education précédent inchangé) ...
-            // J'ai juste copié le contenu que nous avons défini dans la réponse précédente
-            // pour ne pas surcharger, mais assurez-vous d'utiliser la version colorée !
-             bio: `<p><span style="color:var(--ponctuation)">&lt;</span><span style="color:var(--balise)">!DOCTYPE html</span><span style="color:var(--ponctuation)">&gt;</span></p>
-                  <p><span style="color:var(--ponctuation)">&lt;</span><span style="color:var(--balise)">html</span> <span style="color:var(--class)">lang</span><span style="color:var(--ponctuation)">=</span><span style="color:var(--class-name)">"fr"</span><span style="color:var(--ponctuation)">&gt;</span></p>
-                  <p><span style="color:var(--ponctuation)">&lt;</span><span style="color:var(--balise)">head</span><span style="color:var(--ponctuation)">&gt;</span>...<span style="color:var(--ponctuation)">&lt/</span><span style="color:var(--balise)">head</span><span style="color:var(--ponctuation)">&gt;</span></p>
-                  <p><span style="color:var(--ponctuation)">&lt;</span><span style="color:var(--balise)">body</span><span style="color:var(--ponctuation)">&gt;</span></p>
-                  <p><span style="color:var(--ponctuation)">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:var(--balise)">section</span> <span style="color:var(--class)">class</span><span style="color:var(--ponctuation)">=</span><span style="color:var(--class-name)">"Bio"</span><span style="color:var(--ponctuation)">&gt;</span></p>
-                  <p><span style="color:var(--ponctuation)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:var(--balise)">article</span> <span style="color:var(--class)">class</span><span style="color:var(--ponctuation)">=</span><span style="color:var(--class-name)">"A propos de moi"</span><span style="color:var(--ponctuation)">&gt;</span></p>
-                  
-                  <p><span style="color:var(--ponctuation)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:var(--balise)">p</span><span style="color:var(--ponctuation)">&gt;</span><span style="color:var(--text-primary)">&nbsp;// RECHERCHE DE STAGE POUR 2 MOIS (8 SEMAINES)</span></p>
-                  <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passionné par la création web, mon objectif est simple :</span></p>
-                  <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;donner vie à des projets digitaux en partant de zéro.</span></p>
-                  <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fort d'une maîtrise avancée d'Illustrator et de compétences</span></p>
-                  <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;solides en HTML/CSS, je suis capable de concevoir des</span></p>
-                  <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;éléments visuels et de les intégrer techniquement.</span></p>
-                  <br>
-                  <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Je ne cherche pas seulement un stage de 8 semaines,</span></p>
-                  <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mais une opportunité de m'investir pleinement,</span></p>
-                  <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d'apprendre vite, et de contribuer activement à</span></p>
-                  <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;la réussite de vos interfaces web.</span></p>
-                  <p><span style="color:var(--ponctuation)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:var(--balise)">p</span><span style="color:var(--ponctuation)">&gt;</span></p>
-                  
-                  <p><span style="color:var(--ponctuation)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:var(--balise)">article</span><span style="color:var(--ponctuation)">&gt;</span></p>
-                  <p><span style="color:var(--ponctuation)">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:var(--balise)">section</span><span style="color:var(--ponctuation)">&gt;</span></p>
-                  <p><span style="color:var(--ponctuation)">&nbsp;&nbsp;&lt;/</span><span style="color:var(--balise)">body</span><span style="color:var(--ponctuation)">&gt;</span></p>
-                  <p><span style="color:var(--ponctuation)">&nbsp;&nbsp;&lt;</span><span style="color:var(--balise)">footer</span><span style="color:var(--ponctuation)">&gt;</span>...<span style="color:var(--ponctuation)">&lt/</span><span style="color:var(--balise)">footer</span><span style="color:var(--ponctuation)">&gt;</span></p>
-                  <p><span style="color:var(--ponctuation)">&lt;/</span><span style="color:var(--balise)">html</span><span style="color:var(--ponctuation)">&gt;</span></p>`,
+const codeDisplay = document.querySelector('.code-content');
+
+if (bioBtn && codeDisplay) {
+    const contentData = {
+         bio: `<p><span style="color:var(--ponctuation)">&lt;</span><span style="color:var(--balise)">!DOCTYPE html</span><span style="color:var(--ponctuation)">&gt;</span></p>
+              <p><span style="color:var(--ponctuation)">&lt;</span><span style="color:var(--balise)">html</span> <span style="color:var(--class)">lang</span><span style="color:var(--ponctuation)">=</span><span style="color:var(--class-name)">"fr"</span><span style="color:var(--ponctuation)">&gt;</span></p>
+              <p><span style="color:var(--ponctuation)">&lt;</span><span style="color:var(--balise)">head</span><span style="color:var(--ponctuation)">&gt;</span>...<span style="color:var(--ponctuation)">&lt/</span><span style="color:var(--balise)">head</span><span style="color:var(--ponctuation)">&gt;</span></p>
+              <p><span style="color:var(--ponctuation)">&lt;</span><span style="color:var(--balise)">body</span><span style="color:var(--ponctuation)">&gt;</span></p>
+              <p><span style="color:var(--ponctuation)">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:var(--balise)">section</span> <span style="color:var(--class)">class</span><span style="color:var(--ponctuation)">=</span><span style="color:var(--class-name)">"Bio"</span><span style="color:var(--ponctuation)">&gt;</span></p>
+              <p><span style="color:var(--ponctuation)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:var(--balise)">article</span> <span style="color:var(--class)">class</span><span style="color:var(--ponctuation)">=</span><span style="color:var(--class-name)">"A propos de moi"</span><span style="color:var(--ponctuation)">&gt;</span></p>
+              
+              <p><span style="color:var(--ponctuation)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:var(--balise)">p</span><span style="color:var(--ponctuation)">&gt;</span><span style="color:var(--text-primary)">&nbsp;// RECHERCHE D'ALTERNANCE DES JUILLET/AOÛT 2026'</span></p>
+              <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passionné par le design d'interface,</span></p>
+              <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mon objectif est de concevoir des expériences digitales intuitives et esthétiques.</span></p>
+              <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alliant une expertise sur Illustrator à une solide compréhension du HTML/CSS,</span></p>
+              <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;je fais le pont entre la vision créative et l'intégration technique.</span></p>
+              <br>
+              <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Plus qu'une simple alternance,</span></p>
+              <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;je recherche un environnement où je pourrai m'investir durablement</span></p>
+              <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pour optimiser vos parcours utilisateurs et sublimer l'identité visuelle de vos projets.</span></p>
+              <p><span style="color:var(--ponctuation)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:var(--balise)">p</span><span style="color:var(--ponctuation)">&gt;</span></p>
+              
+              <p><span style="color:var(--ponctuation)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:var(--balise)">article</span><span style="color:var(--ponctuation)">&gt;</span></p>
+              <p><span style="color:var(--ponctuation)">&nbsp;&nbsp;&lt;/</span><span style="color:var(--balise)">body</span><span style="color:var(--ponctuation)">&gt;</span></p>
+              <p><span style="color:var(--ponctuation)">&nbsp;&nbsp;&lt;</span><span style="color:var(--balise)">footer</span><span style="color:var(--ponctuation)">&gt;</span>...<span style="color:var(--ponctuation)">&lt/</span><span style="color:var(--balise)">footer</span><span style="color:var(--ponctuation)">&gt;</span></p>
+              <p><span style="color:var(--ponctuation)">&lt;/</span><span style="color:var(--balise)">html</span><span style="color:var(--ponctuation)">&gt;</span>`,
 
             interests: `<p><span style="color:var(--const)">const</span> <span style="color:var(--const-name)">hobbies</span> <span style="color:var(--const)">=</span> <span style="color:var(--text-white)">[</span></p>
                         <p><span style="color:var(--class-name)">&nbsp;&nbsp;"Photographie"</span><span style="color:var(--text-white)">,</span></p>
@@ -368,7 +362,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p><span style="color:var(--text-white)">];</span></p>`,
 
             education: `<p><span style="color:var(--balise)">class</span> <span style="color:var(--class)">Expérience</span> <span style="color:var(--text-white)">{</span></p>
-                        <p><span style="color:var(--text-primary)">&nbsp;&nbsp;// 2018 - 2025</span></p>
+                        <p><span style="color:var(--text-primary)">&nbsp;&nbsp;// Avril - Mai 2026 (2 mois)</span></p>
+                        <p><span style="color:var(--class-name)">&nbsp;&nbsp;"SM Beauty"</span><span style="color:var(--text-white)">() {</span></p>
+                        <p><span style="color:var(--balise)">&nbsp;&nbsp;&nbsp;&nbsp;return</span> <span style="color:var(--text-white)">[</span></p>
+                        <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Conception et développement</span></p>
+                        <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d’un site vitrine responsive</span></p>
+                        <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;après analyse des besoins.</span></p>
+                        <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;];</span></p>
+                        <p><span style="color:var(--text-white)">&nbsp;&nbsp;}</span></p>
+                        <br>
+                        <p><span style="color:var(--text-primary)">&nbsp;&nbsp;// 2018 - 2026</span></p>
                         <p><span style="color:var(--class-name)">&nbsp;&nbsp;"Restaurant Le Siècle d’Or"</span><span style="color:var(--text-white)">() {</span></p>
                         <p><span style="color:var(--balise)">&nbsp;&nbsp;&nbsp;&nbsp;return</span> <span style="color:var(--text-white)">[</span></p>
                         <p><span style="color:var(--text-white)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Salarié polyvalent",</span></p>
@@ -407,18 +410,35 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p><span style="color:var(--text-white)">}</span></p>`
         };
 
-        function setContent(type, btnId) {
+        function setContent(type, sourceId) {
+            // 1. Mise à jour du texte
             if(contentData[type]) {
                 codeDisplay.classList.remove('fade-in-text');
-                void codeDisplay.offsetWidth; // Force Reflow
+                void codeDisplay.offsetWidth; 
                 codeDisplay.innerHTML = contentData[type];
                 codeDisplay.classList.add('fade-in-text');
             }
 
-            document.querySelectorAll('.folder-item').forEach(b => b.style.color = 'var(--text-primary)');
-            const activeBtn = document.getElementById(btnId);
-            if(activeBtn) activeBtn.style.color = 'var(--text-white)';
+            // 2. Gestion des couleurs des boutons (PC + Mobile)
             
+            // Reset de tous les boutons (PC et Mobile)
+            document.querySelectorAll('.folder-item, .mobile-file-item').forEach(b => {
+                b.style.color = 'var(--text-primary)';
+                b.classList.remove('active'); // Retire la classe active visuelle
+            });
+
+            // Activer le bouton PC correspondant
+            const pcBtn = document.getElementById('folder-' + type);
+            if(pcBtn) pcBtn.style.color = 'var(--text-white)';
+
+            // Activer le bouton Mobile correspondant
+            const mobBtn = document.getElementById('mob-' + type);
+            if(mobBtn) {
+                mobBtn.style.color = 'var(--text-white)';
+                mobBtn.classList.add('active'); // Ajoute le fond vert léger
+            }
+            
+            // Gestion du bouton CV
             const cvBtn = document.getElementById('cv-btn');
             if (cvBtn) {
                 if (type === 'education') {
@@ -433,10 +453,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        document.getElementById('folder-bio').addEventListener('click', () => setContent('bio', 'folder-bio'));
-        document.getElementById('folder-interests').addEventListener('click', () => setContent('interests', 'folder-interests'));
-        document.getElementById('folder-education').addEventListener('click', () => setContent('education', 'folder-education'));
+        // --- Écouteurs d'événements (PC) ---
+        const btnBio = document.getElementById('folder-bio');
+        const btnInterests = document.getElementById('folder-interests');
+        const btnEducation = document.getElementById('folder-education');
+
+        if(btnBio) btnBio.addEventListener('click', () => setContent('bio', 'folder-bio'));
+        if(btnInterests) btnInterests.addEventListener('click', () => setContent('interests', 'folder-interests'));
+        if(btnEducation) btnEducation.addEventListener('click', () => setContent('education', 'folder-education'));
+
+        // --- Écouteurs d'événements (MOBILE) ---
+        const mobBio = document.getElementById('mob-bio');
+        const mobInterests = document.getElementById('mob-interests');
+        const mobEducation = document.getElementById('mob-education');
+
+        if(mobBio) mobBio.addEventListener('click', () => setContent('bio', 'mob-bio'));
+        if(mobInterests) mobInterests.addEventListener('click', () => setContent('interests', 'mob-interests'));
+        if(mobEducation) mobEducation.addEventListener('click', () => setContent('education', 'mob-education'));
         
+        // Initialisation par défaut
         setContent('bio', 'folder-bio');
     }
 
@@ -448,6 +483,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const projects = document.querySelectorAll('.project-card');
 
     function applyFilters() {
+        // 1. Quels filtres sont cochés ?
         let activeTechs = [];
         document.querySelectorAll('.filter-item').forEach(f => {
             if (f.querySelector('.checkbox').classList.contains('checked')) {
@@ -456,21 +492,40 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        let visibleCount = 0;
+
         projects.forEach(card => {
+            // 2. Technos de la carte (ex: "HTML CSS JS")
             const cardTechString = card.getAttribute('data-tech');
             const cardTechs = cardTechString ? cardTechString.split(' ') : [];
 
-            if (activeTechs.length === 0) {
+            // 3. Logique : Si aucun filtre coché => Tout afficher. 
+            // Sinon => Afficher si la carte contient AU MOINS UN des filtres actifs.
+            const hasMatch = activeTechs.length === 0 || activeTechs.some(filter => cardTechs.includes(filter));
+
+            if (hasMatch) {
                 card.style.display = 'flex';
+                visibleCount++;
             } else {
-                const hasMatch = activeTechs.some(tech => cardTechs.includes(tech));
-                if (hasMatch) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
+                card.style.display = 'none';
             }
         });
+
+        // 4. GESTION DU MESSAGE D'ERREUR
+        const noResultsMsg = document.getElementById('no-results-message');
+        const projectsGrid = document.querySelector('.projects-grid');
+
+        if (noResultsMsg && projectsGrid) {
+            if (visibleCount === 0) {
+                // Aucun projet visible : on cache la grille et on montre le message
+                projectsGrid.style.display = 'none';
+                noResultsMsg.style.display = 'flex';
+            } else {
+                // Des projets sont là : on montre la grille
+                projectsGrid.style.display = 'grid';
+                noResultsMsg.style.display = 'none';
+            }
+        }
     }
 
     if (filterItems.length > 0) {
