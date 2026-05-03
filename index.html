@@ -9,17 +9,27 @@
 
 <body>
     <div class="ide-container">
+        <div class="bg-gradient-green"></div>
+        <div class="bg-gradient-blue"></div>
+
         <header>
             <div class="logo">
                 <a href="index.html"><img src="icons/logo.svg" class="logo-item" alt="logo" width="32" height="32" /></a>
                 <span class="name">Cheng-Pascal</span>
             </div>
-            <nav>
+            
+            <nav id="nav-menu">
                 <a href="index.html" class="active home-link">_hello-world</a>
                 <a href="about-me.html" class="locked">_a-propos</a>
                 <a href="projects.html" class="locked">_projets</a>
                 <a href="contact-me.html" class="locked contact-link">_contact</a>
             </nav>
+
+            <div class="hamburger" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </header>
 
         <div class="main-body">
@@ -31,8 +41,9 @@
                         <h2 class="role">Développeur Front-end</h2>
                         
                         <div class="comment-block">
-                            <p class="comment">// Complétez le jeu pour continuer</p>
-                            <p class="comment">// vous pouvez aussi passer</p>
+                            <p class="comment mobile-hide">// Complétez le jeu pour continuer</p>
+                            <p class="comment mobile-hide">// vous pouvez aussi passer</p>
+                            <p class="comment mobile-show">// Bienvenue sur ma version mobile</p>
                             <p class="code-line">
                                 <span class="const">const</span> <span class="const-name">githubLink</span> = 
                                 <span class="str"><a href="https://github.com/MadeInChina9999" target="_blank" class="str">"https://github.com/MadeInChina9999"</a></span>
@@ -106,9 +117,8 @@
 
         <footer>
             <div class="socials">
-                <span style="display:flex; align-items:center; margin-right: 15px; color:var(--text-primary)">Retrouvez moi sur:</span>
+                <span class="footer-label" style="display:flex; align-items:center; margin-right: 15px; color:var(--text-primary)">Retrouvez moi sur:</span>
                 <a href="https://www.linkedin.com/in/pascal-cheng-developpeur/" class="social-item" target="_blank"><img src="icons/in.svg" alt="In"></a>
-                <!-- <a href="https://twitter.com" class="social-item" target="_blank"><img src="icons/x.svg" alt="X"></a> -->
             </div>
             <div class="github-user">
                 @MadeInChina9999 <a href="https://github.com/MadeInChina9999" target="_blank" style="margin-left:10px;"><img src="icons/GitHub.svg" alt="GH"></a>
